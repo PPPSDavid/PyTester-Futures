@@ -13,6 +13,10 @@ This event driven backtester follows the general idea found in the event-driven 
  takes bar data from the queue and give out signals to be used in trading. 
  *Note*: This is a highly flexible interface so other operatiosn like generating csv data from datasource can also be done here
 
+#### Strategy_scoring & Strategy_scoring_lite
+
+These classes are used by  strategies involving a scoring mechanism. The heavy version stores data on its own, while the lite version rely on the strategy class to provide data and thus is more efficient. 
+
 ### Portfolio:
 
  takes in signal and market information, generate open order (in cash amount) and close position order (in real amount)
@@ -38,3 +42,13 @@ As per the snakeviz analysis I run, this backtester can run 2000+ rows of backte
 Calculate an industrial index based on equal weighting all future contract's daily percentage change, store it in a csv file
 
 #### Simple Don Chian channle trading strategy
+
+Don-Chian breakout.
+
+#### Multifactor selection hedging strategy
+
+Score futures, long the highest scores, short the lowest scores.
+
+#### Don-Chian with selection
+
+Trade only selected contracts with Don-Chian strategy
